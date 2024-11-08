@@ -1,10 +1,10 @@
-def add_everything_up(a:(int or float or str), b:(int or float or str)):
+from typing import Union
+def add_everything_up(a, b) -> Union[int, float, str]:
     try:
-        a + b
+        return f'{a + b:0.3f}'
     except TypeError:
         return f'{a}{b}'
-    else:
-        return f'{a+b:0.3f}'
+
 
 
 print(add_everything_up(123.456, 'строка'))
